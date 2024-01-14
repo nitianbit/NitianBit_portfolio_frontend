@@ -65,8 +65,8 @@ export default function Experience(props) {
   }
 
   return (
-    <section id="resume" className="pb-5">
-      <div className="col-md-12 mx-auto">
+    <section id="resume" style={{marginTop:'-15px'}}>
+      <div className="col-md-12 mx-auto"  >
         <div className="col-md-12">
           <h1 className="section-title" style={{ color: "black" }}>
             <span className="text-black" style={{ textAlign: "center" }}>
@@ -75,9 +75,10 @@ export default function Experience(props) {
           </h1>
         </div>
       </div>
-      <div className="col-md-8 mx-auto">
+      <div className="col-md-12 mx-auto"  >
         <VerticalTimeline>
           {work}
+          
           <VerticalTimelineElement
             iconStyle={{
               background: "#AE944F",
@@ -88,7 +89,12 @@ export default function Experience(props) {
               <i className="fas fa-hourglass-start mx-auto experience-icon"></i>
             }
           />
+         
         </VerticalTimeline>
+        <br/>
+          <br/>
+          <br/>
+          <br/>
       </div>
     </section>
   );

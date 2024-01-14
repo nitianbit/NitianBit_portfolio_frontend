@@ -18,6 +18,7 @@ export default function Project(props) {
    }
 
    if(props.resumeProjects && props.resumeBasicInfo) {
+   
     var sectionName = props.resumeBasicInfo.sectionName;
     var projects = props.resumeProjects.map((projects)=>{
       return (
@@ -54,12 +55,12 @@ export default function Project(props) {
             <span>{sectionName}</span>
           </h1>
           <div className="col-md-12 mx-auto">
-            <div className="row mx-auto">{projects}</div>
+            <div className="row mx-auto" style={{display:'flex', flexDirection:'row',justifyContent:'space-around',alignItems:'center'}}>{projects}</div>
           </div>
           <ProjectDetailsModal
             show={ detailsModalShow}
             onHide={detailModalClose}
-            data={ deps}
+            data={deps}
           />
         </div>
       </section>

@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import About from './AboutUs/'
 import Home from './Home'
 import Blogs from './Blogs'
+import '../App.scss'
 
 export default function index() {
   return (

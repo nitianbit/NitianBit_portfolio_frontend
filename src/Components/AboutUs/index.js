@@ -5,6 +5,7 @@ import Skill from './Skill';
 import Project from './Project';
 import Experience from './Experience';
 import Footer from '../Footer/Footer';
+import "../../App.scss";
 
 export default function Index(props) {
     const [resumeData, setResumeData] = useState({});
@@ -34,6 +35,7 @@ export default function Index(props) {
     useEffect(()=>{
         //loadSharedData(props.sharedDataLink)
         loadResumeData(props.resumeDataLink)
+        console.log(resumeData)
     },[])
   return (
     <div>
@@ -41,18 +43,18 @@ export default function Index(props) {
         resumeBasicInfo={resumeData.resumeBasicInfo}
         sharedBasicInfo={resumeData.resumeBasicInfo}
         />
+            <Project 
+            resumeProjects={resumeData.resumeProjects}
+            resumeBasicInfo={resumeData.resumeBasicInfo}
+            />
         <Skill 
-        resumeProjects={resumeData.resumeProjects}
-        resumeBasicInfo={resumeData.resumeBasicInfo}
-        />
-        <Project 
-        sharedSkills={sharedData.sharedSkills}
+        sharedSkills={resumeData.sharedSkills}
         resumeBasicInfo={resumeData.resumeBasicInfo}
         />
         <Experience 
         resumeExperience={resumeData.resumeExperience}
         resumeBasicInfo={resumeData.resumeBasicInfo}
-        />
+        />  
         <Footer />
     </div>
   )

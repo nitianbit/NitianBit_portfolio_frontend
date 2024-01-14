@@ -5,21 +5,23 @@ import AwesomeSliderStyles from "../scss/light-slider.scss";
 import AwesomeSliderStyles2 from "../scss/dark-slider.scss";
 import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
 export default function ProjectDetailModal(props) {
-    if (props.data) {
+  console.log(props.data)
+  console.log("Props")
+    if (Object.values(props.data).length >0) {
         const technologies = props.data.technologies;
         const images = props.data.images;
         var title = props.data.title;
         var description = props.data.description;
-        var url = props.data.url;
-        if (props.data.technologies) {
-          var tech = technologies.map((icons, i) => {
+        var url = props.data.link;
+        if (props.data.technologies.skillClass) {
+          var tech = technologies.skillClass.map((icons, i) => {
             return (
               <li className="list-inline-item mx-3" key={i}>
                 <span>
                   <div className="text-center">
-                    <i className={icons.class} style={{ fontSize: "300%" }}>
+                    <i className={icons} style={{ fontSize: "300%" }}>
                       <p className="text-center" style={{ fontSize: "30%" }}>
-                        {icons.name}
+                        {technologies.name[i]}
                       </p>
                     </i>
                   </div>
