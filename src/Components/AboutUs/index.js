@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import About from '../../../../../Temp_pf/react-frontend-dev-portfolio/src/components/About';
+import About from './AboutUs';
 import Skill from './Skill';
 import Project from './Project';
 import Experience from './Experience';
 import Footer from '../Footer/Footer';
 
-export default function index(props) {
+export default function Index(props) {
     const [resumeData, setResumeData] = useState({});
     const [sharedData, setSharedData] = useState({});
 
@@ -23,33 +23,35 @@ export default function index(props) {
     const loadResumeData = (url) =>{
         axios.get(url).then(res=>{
             res = res.data;
-            setResumeData(res);
+            console.log(res,"\n\ncoming")
+            setResumeData(res[0]);
+            console.log(resumeData[0])
         }).catch(err=>{
-            Clearfix("Error on Load Resume Data...\n",err);
+            console.log("Error on Load Resume Data...\n",err);
         })
     }
 
     useEffect(()=>{
-        loadSharedData(props.sharedDataLink)
+        //loadSharedData(props.sharedDataLink)
         loadResumeData(props.resumeDataLink)
     },[])
   return (
     <div>
         <About 
-        resumeBasicInfo={resumeData.basic_info}
-        sharedBasicInfo={sharedData.basic_info}
+        resumeBasicInfo={resumeData.resumeBasicInfo}
+        sharedBasicInfo={resumeData.resumeBasicInfo}
         />
         <Skill 
-        resumeProjects={resumeData.projects}
-        resumeBasicInfo={resumeData.basic_info}
+        resumeProjects={resumeData.resumeProjects}
+        resumeBasicInfo={resumeData.resumeBasicInfo}
         />
         <Project 
-        sharedSkills={sharedData.skills}
-        resumeBasicInfo={resumeData.basic_info}
+        sharedSkills={sharedData.sharedSkills}
+        resumeBasicInfo={resumeData.resumeBasicInfo}
         />
         <Experience 
-        resumeExperience={resumeData.experience}
-        resumeBasicInfo={resumeData.basic_info}
+        resumeExperience={resumeData.resumeExperience}
+        resumeBasicInfo={resumeData.resumeBasicInfo}
         />
         <Footer />
     </div>

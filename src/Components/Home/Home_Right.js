@@ -1,6 +1,6 @@
 import React from 'react';
 import './hr_style.css';
-import Foad from '../../assets/img/icon.jpg';
+import Foad from '../../assets/img/icon.png';
 import {
   Container,
   Row,

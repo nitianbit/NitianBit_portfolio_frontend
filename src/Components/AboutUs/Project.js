@@ -6,9 +6,10 @@ export default function Project(props) {
   let [detailsModalShow, setDetailsModalShow] = useState(false);
   let [deps,setDeps] = useState({})
 
-   let detailModalOpen = (data) =>{
+   let detailsModalOpen = (data) =>{
     // open the Modal
     setDetailsModalShow(true);
+    setDeps(data);
    }
 
    let detailModalClose = (data) =>{
@@ -37,7 +38,7 @@ export default function Project(props) {
               <span className="project-date">{projects.startDate}</span>
               <br />
               <p className="project-title-settings mt-3">
-                {projects.title}
+                <a href={projects.link}>{projects.title}</a>
               </p>
             </div>
           </div>

@@ -1,6 +1,15 @@
 import React from 'react'
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import Badge from "react-bootstrap/Badge";
+ 
 
 export default function Experience(props) {
+  console.log(props.resumeBasicInfo)
+  console.log(props.resumeExperience)
   if (props.resumeExperience && props.resumeBasicInfo) {
     var sectionName = props.resumeBasicInfo.section_name.experience;
     var work = props.resumeExperience.map(function (work, i) {
