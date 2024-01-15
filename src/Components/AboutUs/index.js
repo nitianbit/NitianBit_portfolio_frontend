@@ -38,6 +38,7 @@ export default function Index(props) {
         console.log(resumeData)
     },[])
   return (
+     resumeData == undefined?<h1 style={{display:'flex',justifyContent:'center',alignItems:'center'}}> Please Add Data Firstly !!</h1>:
     <div>
         <About 
         resumeBasicInfo={resumeData.resumeBasicInfo}

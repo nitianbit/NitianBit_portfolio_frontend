@@ -58,6 +58,9 @@ export default function Experience(props) {
           >
             {work.company}
           </h4>
+          <br/>
+          <span><a href={work.githubLink} style={{color:'blue'}}>GithubLink                </a></span> 
+          {/* {work.link == "" ?"":`${<span><a href={work.link} style={{color:'blue'}}>   Link</a></span>}`} */}
           <div style={{ textAlign: "left", marginTop: "15px" }}>{tech}</div>
         </VerticalTimelineElement>
       );
