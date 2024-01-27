@@ -16,6 +16,7 @@ import particles from '../Const/particle.js';
 import ReactGa from 'react-ga';
 import { loadFull } from "tsparticles"
 import {Helmet} from 'react-helmet';
+import { useEffect } from 'react';
 // import { loadSlim } from "tsparticles-slim";
 // import type { Container, Engine } from "tsparticles-engine";
 
@@ -42,6 +43,9 @@ const Index = ()=> {
   const particlesLoaded = useCallback(async container => {
     await console.log(container);
   }, []);
+  useEffect(()=>{
+    console.log("URL is:", process.env.REACT_APP_RESUME_URL)
+  },[])
   return (
       <div>
          <Helmet>
